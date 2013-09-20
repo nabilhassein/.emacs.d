@@ -1,0 +1,7 @@
+*.elc
+gchat-auth
+irc-auth
+*~
+.emacs.desktop*
+auto-save-list/
+history
