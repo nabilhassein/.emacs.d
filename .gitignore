@@ -1,7 +1,9 @@
+auto-save-list/
+url/
+elpa/archives/
 *.elc
-gchat-auth
-irc-auth
 *~
 .emacs.desktop*
-auto-save-list/
 history
+gchat-auth
+irc-auth
