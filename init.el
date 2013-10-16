@@ -32,6 +32,10 @@
 (delete-other-windows)
 (fullscreen)
 
+(require 'scala-mode2)
+(add-to-list 'load-path "~/.emacs.d/elpa/ensime/elisp/")
+(require 'ensime)
+(add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
 
 ;; note that the following files are git-ignored,
 ;; so they must be transferred manually:
