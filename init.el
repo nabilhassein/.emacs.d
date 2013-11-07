@@ -27,7 +27,7 @@
 (server-start)
 
 ;; keep .elc up-to-date
-(byte-recompile-directory "~/.emacs.d" 0)
+;;(byte-recompile-directory "~/.emacs.d" 0)
 
 (delete-other-windows)
 (fullscreen)
@@ -37,14 +37,23 @@
 (require 'ensime)
 (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
 
+(defadvice find-tag (before split-window activate)
+  "Jump to the tag in another window rather than trampling the current location of the buffer."
+    (interactive)
+    (message "FOO")
+    (delete-other-windows)
+    (split-window-right)
+    (other-window))
+(ad-activate 'find-tag)
+
 ;; note that the following files are git-ignored,
 ;; so they must be transferred manually:
 ;; irc-auth, gchat-auth
 ;; other than this, git clone should be set up everything automatically
-(load "~/.emacs.d/irc.el")
+;;(load "~/.emacs.d/irc.el")
 
 ;; everything above ought to work on any machine with emacs24 installed
-(load "~/.emacs.d/gchat.el")
+;;(load "~/.emacs.d/gchat.el")
 
-(load-file (let ((coding-system-for-read 'utf-8))
-                (shell-command-to-string "agda-mode locate")))
+;; (load-file (let ((coding-system-for-read 'utf-8))
+;;                 (shell-command-to-string "agda-mode locate")))
