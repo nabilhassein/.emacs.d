@@ -37,14 +37,12 @@
 (require 'ensime)
 (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
 
-(defadvice find-tag (before split-window activate)
+(defadvice ensime-edit-definition (before split-window activate)
   "Jump to the tag in another window rather than trampling the current location of the buffer."
-    (interactive)
-    (message "FOO")
     (delete-other-windows)
     (split-window-right)
-    (other-window))
-(ad-activate 'find-tag)
+    (other-window 1))
+(ad-activate 'ensime-edit-definition)
 
 ;; note that the following files are git-ignored,
 ;; so they must be transferred manually:
