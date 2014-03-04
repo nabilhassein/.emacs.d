@@ -1,10 +1,5 @@
-;;; package -- settings.el: my personal preferences besides those in prelude
-
-;; This file is not part of GNU Emacs.
-
-;;; Commentary: The Prelude thinks this should go at the top of all .el files
-
-;;; Code:
+;; I hate and despise the bell
+(setq ring-bell-function 'ignore)
 
 ;; the way line highlighting works is INCREDIBLY ANNOYING in the terminal
 (global-hl-line-mode -1)
@@ -23,7 +18,8 @@
 ;; display column numbers in the mode line
 (column-number-mode t)
 
-;; display the time
+;; display the day, date and time
+(setq display-time-day-and-date t)
 (display-time-mode 1)
 
 ;; show matching parenthesis
@@ -31,7 +27,7 @@
 
 ;; prefer to split windows side-by-side instead of top-over-bottom
 (setq split-height-threshold nil)
-(setq split-width-threshold 90)
+(setq split-width-threshold 200)
 
 ;; get rid of "please answer yes or no" nonsense
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -82,8 +78,6 @@
 (add-to-list 'auto-mode-alist '("\\.markdown$" . markdown-mode))
 (add-hook 'markdown-mode-hook 'flyspell-mode)
 (add-hook 'markdown-mode-hook 'visual-line-mode)
-;; need the ability to put two blank spaces at end of line in markdown documents
-(setq prelude-whitespace nil)
 
 ;; haskell mode
 (setq haskell-program-name "ghci")

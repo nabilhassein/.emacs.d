@@ -11,6 +11,9 @@
 (load "~/.emacs.d/settings.el")
 (load "~/.emacs.d/keybindings.el")
 
+(require 'ace-jump-mode)
+(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+
 ;; initialize environment, including PATH, from user shell
 (require 'exec-path-from-shell)
 (exec-path-from-shell-initialize)
@@ -31,6 +34,16 @@
 
 (delete-other-windows)
 (fullscreen)
+
+(require 'magit)
+(global-set-key (kbd "C-c g") 'magit-grep)
+(global-set-key (kbd "C-c C-g") 'magit-grep)
+
+(add-to-list 'load-path "~/.emacs.d/elpa/dirtree/")
+(require 'dirtree)
+(define-key tree-mode-map (kbd "f") 'forward-char)
+(define-key tree-mode-map (kbd "b") 'backward-char)
+(define-key tree-mode-map (kbd "m") 'widget-button-press)
 
 (require 'scala-mode2)
 (add-to-list 'load-path "~/.emacs.d/elpa/ensime/elisp/")

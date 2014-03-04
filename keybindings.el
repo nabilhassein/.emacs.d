@@ -55,6 +55,23 @@
 (global-set-key (kbd "C-c ;") 'comment-or-uncomment-region)
 (global-set-key (kbd "C-c C-;") 'comment-or-uncomment-region)
 
+;; Variation of `zap-to-char'.
+(defun zap-up-to-char (arg char)
+  "Kill up to, but not including ARGth occurrence of CHAR.
+  Case is ignored if `case-fold-search' is non-nil in the current buffer.
+  Goes backward if ARG is negative; error if CHAR not found.
+  Ignores CHAR at point."
+  (interactive "p\ncZap up to char: ")
+  (let ((direction (if (>= arg 0) 1 -1)))
+    (kill-region (point)
+                 (progn
+                   (forward-char direction)
+                   (unwind-protect
+                       (search-forward (char-to-string char) nil nil arg)
+                     (backward-char direction))
+                   (point)))))
+(global-set-key (kbd "M-Z") 'zap-up-to-char)
+
 (defun fullscreen ()
   (interactive)
   (set-frame-parameter nil 'fullscreen
