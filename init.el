@@ -8,6 +8,14 @@
 (package-refresh-contents)
 (package-initialize)
 
+(setq package-list
+      '(ace-jump-mode exec-path-from-shell shell-switcher magit dirtree scala-mode2 ensime idris-mode)
+      )
+(dolist (package package-list)
+  (unless (package-installed-p package)
+    (package-install package)))
+
+
 (load "~/.emacs.d/settings.el")
 (load "~/.emacs.d/keybindings.el")
 
@@ -23,8 +31,6 @@
 
 (elscreen-start)
 (elscreen-set-prefix-key (kbd "C-t"))
-
-(elnode-init)
 
 ;; for emacsclient
 (server-start)
