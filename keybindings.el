@@ -1,15 +1,3 @@
-;;; package --- Summary: my global key bindings
-
-;; This file is not part of GNU Emacs.
-
-;;; Commentary: The Prelude thinks this should go at the top of all .el files
-
-;;; Code:
-
-(global-set-key (kbd "C-c x") 'clipboard-kill-region)
-(global-set-key (kbd "C-c c") 'clipboard-kill-ring-save)
-(global-set-key (kbd "C-c v") 'clipboard-yank)
-
 (global-set-key (kbd "C-w") 'backward-kill-word)
 
 (global-set-key (kbd "C-x C-k") 'kill-region)
