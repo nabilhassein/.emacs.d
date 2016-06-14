@@ -7,6 +7,7 @@
 
 (load "~/.emacs.d/haskell.el")
 (load "~/.emacs.d/scala.el")
+(load "~/.emacs.d/javascript.el")
 
 (load "~/.emacs.d/org-mode.el")
 (load "~/.emacs.d/markdown.el")
