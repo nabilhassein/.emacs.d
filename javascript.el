@@ -1,4 +1,4 @@
-(setq jsx-indent-level 2)
+(setq jsx-indent-level 4)
 
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . jsx-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . jsx-mode))
