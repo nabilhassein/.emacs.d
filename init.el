@@ -2,7 +2,7 @@
 (load "~/.emacs.d/keybindings.el")
 (load "~/.emacs.d/settings.el")
 
-(load "~/.emacs.d/shell.el")
+;;(load "~/.emacs.d/shell.el")
 (load "~/.emacs.d/git.el")
 
 (load "~/.emacs.d/haskell.el")

@@ -82,5 +82,4 @@
 ;; keep .elc up-to-date
 ;;(byte-recompile-directory "~/.emacs.d" 0)
 
-(set-default-font "Monospace 20")
 (fullscreen)
