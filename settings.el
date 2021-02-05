@@ -82,4 +82,4 @@
 ;; keep .elc up-to-date
 ;;(byte-recompile-directory "~/.emacs.d" 0)
 
-(fullscreen)
+(text-scale-increase 2)
